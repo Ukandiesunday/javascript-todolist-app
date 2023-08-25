@@ -1,8 +1,13 @@
 
  
-const todoList = [{name:'Study js', dueDate:'2023-08-18'},{
+const todoList =  JSON.parse(localStorage.getItem("todoList")) ||
+ [{name:'Study js', dueDate:'2023-08-18'},{
   name: 'Go gym', dueDate:'2023-08-20'
 }];
+
+function saveToStorage(){
+  localStorage.setItem("todoList", JSON.stringify(todoList))
+}
 
 displaytodoList(); //To display the todo list on the page
 
@@ -24,7 +29,9 @@ function displaytodoList(){
   document.querySelectorAll('.js-todo-delete-button')
   .forEach((deleteButton, index) => {
     deleteButton.addEventListener('click',() => {
+
       todoList.splice(index, 1);
+
         displaytodoList();
     });
   });
@@ -32,7 +39,10 @@ function displaytodoList(){
  localStorage.setItem("todoListHTML", JSON.stringify(todoListHTML));
 
  const result = JSON.parse(localStorage.getItem("todoListHTML"));
+
   todoListHTML = result;
+
+  saveToStorage();
   }
   
 
@@ -55,7 +65,10 @@ function addTodo(){
   });
   
   inputElem.value = ''; //To reset text box  to 'todo name'.
+
   displaytodoList();
+
+  saveToStorage();
 }
 
 let checkBox = document.getElementById('checkbox');
