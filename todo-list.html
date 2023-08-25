@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo list project</title>
+    <link rel="stylesheet" href="styles/todo-list.css">
+  </head>
+  <body>
+    
+    <div class="todo-container">
+      <h2 class="todo-header">todo list</h2>  
+      <h3 class="todo-subheader">Carefully keep track of your daily routine below</h3> 
+
+      <div class="todo-grid-input">
+        <div>
+          <input placeholder="Todo name" class="todo-input">
+        </div>
+
+        <div>
+          <input type="date" class="js-duedate-input duedate-input">
+        </div>
+
+        <div>
+          <button class="todo-btn add-btn js-add-todo-btn">Add</button>
+        </div>
+      </div>
+        
+      <div class="toggle-todo">
+        <div class="js-todo-list todo-grid"></div>  
+      </div>
+
+      <div id="align-checkbox">
+       <div id="toggle-todo-title">Toggle todos<input type="checkbox" name="checkbox" class="enlarge-checkbox" id="checkbox"></div>  
+      </div>
+
+    </div>
+    <script src="scripts/todo-list.js"></script>
+  
+  </body>
+</html>
